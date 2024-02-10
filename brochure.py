@@ -1,12 +1,15 @@
 """
     This module contains classes that represent brochure and it`s components
 """
+
+
 class Brochure:
     """
         This class contains parameters of generated brochure
     """
     def __init__(self, rows=0, columns=0, width=0, height=0, layout_matrix=None, text_parts=0,
                  left_margin=0, top_margin=0, header_height=0, image=None, draw=None):
+
         self.rows = rows
         self.columns = columns
         self.width = width
@@ -24,13 +27,17 @@ class BrochureBlock:
     """
         This class contains parameters of brochure block
     """
-    def __init__(self, width=0, height=0, x=0, y=0, ver_dist=0, hor_dist=0):
+    def __init__(self, width=0, height=0, x=0, y=0, ver_dist=0,
+                 hor_dist=0, font_path=None, text_color=None):
+
         self.width = width
         self.height = height
         self.x = x
         self.y = y
         self.ver_dist = ver_dist
         self.hor_dist = hor_dist
+        self.font_path = font_path
+        self.text_color = text_color
 
 
 class BoundingBox:
