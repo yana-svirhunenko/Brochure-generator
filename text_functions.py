@@ -280,3 +280,20 @@ def delete_file(file_path):
         print(f"The file {file_path} has been deleted.")
     except FileNotFoundError:
         print(f"The file {file_path} does not exist.")
+
+
+def remove_tables_from_json(file_path, image_name):
+    """
+        This function is used to remove all tables that have been generated
+        for image that was deleted
+    """
+
+    try:
+        with open(file_path, 'r', encoding='utf-8') as json_file:
+            existing_data = json.load(json_file)
+    except (json.JSONDecodeError, FileNotFoundError):
+        existing_data = []
+
+    tables = [entry for entry in existing_data if entry.get("image") != image_name]
+    with open(file_path, 'w', encoding='utf-8') as json_file:
+        json.dump(tables, json_file, indent=4)

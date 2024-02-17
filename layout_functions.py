@@ -167,8 +167,8 @@ def generate_brochure_params():
     image = Image.open(path)
     draw = ImageDraw.Draw(image)
     width, height = image.size
-    left_margin = random.randint(20, width // 20)
-    top_margin = random.randint(20, height // 10)
+    left_margin = random.randint(max(20, width//20), width // 20)
+    top_margin = random.randint(max(20, height//20), height // 10)
     matrix, text_parts, rows, columns = generate_brochure_layout(width, height)
     brochure = br.Brochure(rows=rows, columns=columns, width=width,
                            height=height, layout_matrix=matrix,

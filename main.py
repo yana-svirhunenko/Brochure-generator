@@ -18,5 +18,6 @@ for i in range(INSTANCES):
     tf.delete_file(c.generate_path('text_lines_locations/text_locations_', '.json'))
     tf.delete_file(c.generate_path('text_blocks_locations/text_blocks_', '.json'))
     tf.delete_file(c.generate_path('table_locations/tables_', '.json'))
+    tf.remove_tables_from_json(c.COMMON_DATASET_PATH + 'tables.json', str(c.INDEX) + '.jpg')
     lf.generate_brochure()
     c.INDEX += 1
