@@ -1,4 +1,4 @@
-Overview
+#Overview
 
 The Brochure Generator is a Python-based tool designed to automatically create synthetic brochures for use in machine learning tasks. 
 It generates high-quality brochures with customizable text, colors, layouts, and dynamically generated tables. This tool is primarily intended for creating synthetic training data for document classification and computer vision projects.
